@@ -46,7 +46,7 @@ public class Voting {
      */
     public  void vote(Person p, ArrayList<String> selected_polls) {
         LocalDateTime date = LocalDateTime.now();
-        if (!(this.type == 0 && selected_polls.size() == 1)) {
+        if (!(this.type == 0 && selected_polls.size() > 1)) {
             for (String selected_poll : selected_polls) {
                 this.polls.get(selected_poll).add(new Vote(p, new JalaliCalendar(new GregorianCalendar
                         (date.getYear(), date.getMonthValue(), date.getDayOfMonth())).toString()));
